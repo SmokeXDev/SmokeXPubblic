@@ -181,7 +181,7 @@ BoostAirJump = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].Creat
             end)
         end
     end,
-    ["HoverText"] = "Nebula Client"
+    ["HoverText"] = "SmokeX Client"
 })
 
 local AnticheatDisabler = COB("Render", {
@@ -909,11 +909,11 @@ function securefunc(func)
 	end)
 end
 function warnnotify(title, content, duration)
-	local frame = GuiLibrary["CreateNotification"](title or "Nebula Warning", content or "(No Content Given)", duration or 5, "assets/WarningNotification.png")
+	local frame = GuiLibrary["CreateNotification"](title or "SmokeX Warning", content or "(No Content Given)", duration or 5, "assets/WarningNotification.png")
 	frame.Frame.Frame.ImageColor3 = Color3.fromRGB(255, 64, 64)
 end
 function infonotify(title, content, duration)
-	local frame = GuiLibrary["CreateNotification"](title or "Nebula Info", content or "(No Content Given)", duration or 5, "assets/InfoNotification.png")
+	local frame = GuiLibrary["CreateNotification"](title or "SmokeX Info", content or "(No Content Given)", duration or 5, "assets/InfoNotification.png")
 	frame.Frame.Frame.ImageColor3 = Color3.fromRGB(255, 64, 64)
 end
 function getstate()
@@ -929,7 +929,7 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-infonotify("Nebula Client", "Private Version Loaded", 5)
+infonotify("SmokeX Client", "V1 Loaded!", 7)
 
 local CustomFly = COB("Blatant", {
 	["Name"] = "CustomFly",
