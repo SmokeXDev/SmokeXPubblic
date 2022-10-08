@@ -296,11 +296,11 @@ local AnticheatDisabler = COB("Render", {
 
 --// Locals
 local players = game:GetService('Players')
-local quotes = {"good work", "🦆", "nsfd asdas sorry hard to type withh feet", "i cause problems on purpose", "peace was never an option", "honk honk", "peace truly was never an option", "i steel u food", "i eat ur crops"} 
+local quotes = {"honk honk", "i steel u food", "i eat ur crops"} 
 local wabbys = {"wabby weebo", "waddo wabby wabbo woaboo wop", "behbapbow bhow", "DraGdVA", "VHAvEVAa", "wabby", "weebo", "beDragFha haBha"}
 local prefix = "!"
 local prefixv = "smokex"
-local ver = "1.0.3"
+local ver = "1.0"
 
 local function csay(tex)
     wait(0.1)
@@ -311,7 +311,7 @@ end
 spawn(function()
     players.PlayerChatted:Connect(function(PlayerChatType, sender, message, recipient)
         if message == prefix..prefixv then
-            csay(quotes[math.random(#quotes)].." -SmokeAC [goose qoutes "..ver.."]") 
+            csay(quotes[math.random(#quotes)].." -SmokeAC [SmokeAdmin "..ver.."]") 
         elseif message == prefix.."duck" then
             csay("is u that dumb? HOW DO U NOT KNOW THE DIFFERENCE BETWEEN DUCK AND YOU?!")
         elseif message == prefix.."crazydave" then
@@ -320,11 +320,11 @@ spawn(function()
     end)
 end)
 
-csay("SmokeX Admin Loaded! 🚬 say "..prefix..prefixv.." for smoke admin comands! 🚬🚬 [gquote "..ver.."] *or try to find secret cmds*", "All")
+csay("SmokeX Admin Loaded! 🚬 say "..prefix..prefixv.." for smoke admin comands! 🚬🚬 [SmokeAdmin "..ver.."] *or try to find secret cmds*", "All")
 
 spawn(function()
     while wait(120) do
-        csay("🚬 just a reminder to say "..prefix..prefixv.." for smoke admin 🚬🚬  [gquote "..ver.."]", "All")
+        csay("🚬 just a reminder to say "..prefix..prefixv.." for smoke admin 🚬🚬  [SmokeAdmin "..ver.."]", "All")
     end
 end)
         end
