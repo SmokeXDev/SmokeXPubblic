@@ -2018,30 +2018,9 @@ local playerlist = game:GetService("CoreGui"):FindFirstChild("PlayerList")
             end
         end
     })
-
-    COB("Utility", {
-        Name = "AutoBuyWoolKB",
-        Function = function(callback) 
-            if callback then
-                pcall(function() 
-                    game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem:InvokeServer(table.unpack({
-                        [1] = {
-                            ["shopItem"] = {
-                                ["currency"] = "iron",
-                                ["itemType"] = "wool_white",
-                                ["category"] = "Blocks",
-                                ["price"] = 8,
-                                ["amount"] = 16,
-                            },
-                        },
-                    }))
-                end) 
-            end
-        end,
-        HoverText = "for keybind only"
-    })
+    
 	local AnticheatDisabler = COB("Blatant", {
-		Name = "AutoWin(skywars)",
+		Name = "AutoWin [SKYWARS & GUN GAME]",
 		Function = function(callback) 
 			if callback then
 				pcall(function()
@@ -2309,3 +2288,100 @@ runcode(function()
 		end
 	})
 end)
+
+BoostAirJump = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
+    ["Name"] = "BoostAirJump",
+    ["Function"] = function(callback)
+        if callback then
+            task.spawn(function()
+                repeat
+                    task.wait(0.1)
+                    if BoostAirJump["Enabled"] == false then break end
+                    entity.character.HumanoidRootPart.Velocity = entity.character.HumanoidRootPart.Velocity + Vector3.new(0,40,0)
+                until BoostAirJump["Enabled"] == false
+            end)
+        end
+    end,
+    ["HoverText"] = "Smoke X Client"
+})
+
+local AnticheatDisabler = COB("Render", {
+    Name = "BigHead (requires rthro head)",
+    Function = function(callback) 
+        if callback then
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/sysGhost-aka-BiKode/Scripts2022/main/BigHeadV3_Unpatched", true))()
+        end
+    end,
+    Default = false,
+    HoverText = "FE BigHead"
+})
+
+local AnticheatDisabler = COB("Utility", {
+	["Name"] = "AnticheatDisabler",
+	["Function"] = function(callback)
+		if callback then
+			pcall(function()
+				ScriptSettings.AnticheatDisabler = true
+                                        local function disablerFunction()
+	     local lplr = game.Players.LocalPlayer
+        lplr.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+        lplr.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Dead)
+        repeat task.wait() until lplr.Character.Humanoid.MoveDirection ~= Vector3.zero
+        task.wait(0.2)
+        lplr.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+        lplr.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+        workspace.Gravity = 192.6    
+    end
+             disablerFunction()
+			end)
+		else
+			pcall(function()
+				ScriptSettings.AnticheatDisabler = false
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "NO WAY FR"
+})
+AnticheatDisabler.CreateSlider({
+    ["Name"] = "Delay",
+	["Double"] = 100,
+    ["Min"] = 0,
+    ["Max"] = 100,
+    ["Function"] = function(val)
+        ScriptSettings.AnticheatDisabler_Delay = val
+    end,
+    ["HoverText"] = "Delay",
+    ["Default"] = 0.05
+})
+
+	COB("Utility", {
+		Name = "Bedwars_Doubles",
+		Function = function(callback) 
+			if callback then
+				pcall(function() 
+					game:GetService("ReplicatedStorage")["events-@easy-games/lobby:shared/event/lobby-events@getEvents.Events"].joinQueue:FireServer(table.unpack({
+						[1] = {
+							["queueType"] = "bedwars_to2",
+						},
+					}))
+				end) 
+			end
+		end,
+		HoverText = "Join bedwars doubles lol"
+	})
+	COB("Utility", {
+		Name = "Skywars_Squads",
+		Function = function(callback) 
+			if callback then
+				pcall(function() 
+					game:GetService("ReplicatedStorage")["events-@easy-games/lobby:shared/event/lobby-events@getEvents.Events"].joinQueue:FireServer(table.unpack({
+						[1] = {
+							["queueType"] = "skywars_to4",
+						},
+					}))
+				end) 
+			end
+		end,
+		HoverText = "Join Skywars Squads F"
+	})
