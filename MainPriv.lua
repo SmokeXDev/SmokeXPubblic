@@ -2385,3 +2385,123 @@ AnticheatDisabler.CreateSlider({
 		end,
 		HoverText = "Join Skywars Squads F"
 	})
+	
+	local RbHotbar = LIB("Render", {
+    Name = "Rainbow HOTBAR",
+    Function = function(callback) 
+        if callback then
+		function SmokeRB(X) return math.acos(math.cos(X*math.pi))/math.pi end
+
+counter = 0
+
+while wait(0.1)do
+ game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundColor3 = Color3.fromHSV(SmokeRB(counter),1,1)
+ 
+ counter = counter + 0.01
+end
+        end
+    end,
+    Default = false,
+    HoverText = "lel, i see you like rainbow."
+})
+
+local AnticheatBypassCombatCheck = LIB("Combat", {
+    Name = "Combat Check",
+    Function = function(callback) 
+       if callback then 
+				task.spawn(function()
+					repeat 
+						task.wait(0.1)
+						if (not AnticheatBypassCombatCheck["Enabled"]) then break end
+						if AnticheatBypass["Enabled"] then 
+							local plrs = GetAllNearestHumanoidToPosition(true, 30, 1)
+							combatcheck = #plrs > 0 and (not GuiLibrary["ObjectsThatCanBeSaved"]["LongJumpOptionsButton"]["Api"]["Enabled"]) and (not GuiLibrary["ObjectsThatCanBeSaved"]["FlyOptionsButton"]["Api"]["Enabled"])
+							if combatcheck ~= changecheck then 
+								if not combatcheck then 
+									combatchecktick = tick() + 1
+								end
+								changecheck = combatcheck
+							end
+						end
+					until (not AnticheatBypassCombatCheck["Enabled"])
+				end)
+			else
+				combatcheck = false
+			end
+		end,
+		Default = true,
+                HoverText = "AnticheatBypass CombatCheck"
+})
+
+local EmeraldArmour = LIB("Utility", {
+    Name = "Emerald Stuff",
+    Function = function(callback) 
+        if callback then
+		local lplr = game.Players.LocalPlayer
+
+game.ReplicatedStorage.Items.emerald_sword:Clone().Parent = game.ReplicatedStorage.Inventories[lplr.Name]
+game.ReplicatedStorage.Items.emerald_helmet:Clone().Parent = game.ReplicatedStorage.Inventories[lplr.Name]
+game.ReplicatedStorage.Items.emerald_boots:Clone().Parent = game.ReplicatedStorage.Inventories[lplr.Name]
+game.ReplicatedStorage.Items.emerald_chestplate:Clone().Parent = game.ReplicatedStorage.Inventories[lplr.Name]
+        end
+    end,
+    Default = false,
+    HoverText = "Gives you emerald stuff lel."
+})
+
+local RageBladeTool = LIB("Utility", {
+    Name = "RageBlade?",
+    Function = function(callback) 
+        if callback then
+		local lplr = game.Players.LocalPlayer
+
+game.ReplicatedStorage.Items.rageblade:Clone().Parent = game.ReplicatedStorage.Inventories[lplr.Name]
+        end
+    end,
+    Default = false,
+    HoverText = "free rageblade?!"
+})
+
+local AntiCrash = LIB("World", {
+    Name = "AntiCrash",
+    Function = function(callback) 
+        if callback then
+            ScriptSettings.AntiCrash = true
+            while wait(1.5) do
+                if not ScriptSettings.AntiCrash == true then return end
+                if game:GetService("Workspace"):GetRealPhysicsFPS() < ScriptSettings.AntiCrash_MinFps then
+                    game:Shutdown()
+                    boxnotify("FPS Are under minimum. Closed game.")
+                end  
+                if math.floor(tonumber(game:GetService("Stats"):FindFirstChild("PerformanceStats").Ping:GetValue())) > ScriptSettings.AntiCrash_MaxPing then
+                    game:Shutdown()
+		    boxnotify("Ping Are over maximum. Closed game.")
+                end
+            end       
+        else
+            ScriptSettings.AntiCrash = false
+        end
+    end,
+    Default = false,
+    HoverText = "Automatically shutdowns game when fps or ping too low/high"
+})
+AntiCrash.CreateSlider({
+    ["Name"] = "MinFps",
+    ["Min"] = 0,
+    ["Max"] = 100,
+    ["Function"] = function(val)
+        ScriptSettings.AntiCrash_MinFps = val
+    end,
+    ["HoverText"] = "Minimum fps before closing roblox",
+    ["Default"] = 10
+})
+AntiCrash.CreateSlider({
+    ["Name"] = "MaxPing",
+    ["Min"] = 1000,
+    ["Max"] = 100000,
+    ["Function"] = function(val)
+        ScriptSettings.AntiCrash_MaxPing = val
+    end,
+    ["HoverText"] = "Minimum fps before closing roblox",
+    ["Default"] = 10
+})
