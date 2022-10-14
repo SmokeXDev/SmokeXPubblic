@@ -2386,7 +2386,7 @@ AnticheatDisabler.CreateSlider({
 		HoverText = "Join Skywars Squads F"
 	})
 	
-	local RbHotbar = LIB("Render", {
+	local RbHotbar = COB("Render", {
     Name = "Rainbow HOTBAR",
     Function = function(callback) 
         if callback then
@@ -2405,7 +2405,7 @@ end
     HoverText = "lel, i see you like rainbow."
 })
 
-local AnticheatBypassCombatCheck = LIB("Combat", {
+local AnticheatBypassCombatCheck = COB("Combat", {
     Name = "Combat Check",
     Function = function(callback) 
        if callback then 
@@ -2433,7 +2433,7 @@ local AnticheatBypassCombatCheck = LIB("Combat", {
                 HoverText = "AnticheatBypass CombatCheck"
 })
 
-local EmeraldArmour = LIB("Utility", {
+local EmeraldArmour = COB("Utility", {
     Name = "Emerald Stuff",
     Function = function(callback) 
         if callback then
@@ -2449,7 +2449,7 @@ game.ReplicatedStorage.Items.emerald_chestplate:Clone().Parent = game.Replicated
     HoverText = "Gives you emerald stuff lel."
 })
 
-local RageBladeTool = LIB("Utility", {
+local RageBladeTool = COB("Utility", {
     Name = "RageBlade?",
     Function = function(callback) 
         if callback then
@@ -2462,7 +2462,7 @@ game.ReplicatedStorage.Items.rageblade:Clone().Parent = game.ReplicatedStorage.I
     HoverText = "free rageblade?!"
 })
 
-local AntiCrash = LIB("World", {
+local AntiCrash = COB("World", {
     Name = "AntiCrash",
     Function = function(callback) 
         if callback then
