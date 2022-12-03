@@ -2434,8 +2434,8 @@ AntiCrash.CreateSlider({
     ["Default"] = 10
 })
 
-local AnticheatDisabler = COB("Utility", {
-    Name = "AutiReportV3",
+local ReportV3 = COB("Utility", {
+    Name = "AutoReportV3",
     Function = function(ReportV3) 
         if ReportV3 then
          loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/AutoRagePeople/main/LoadReport.lua"))()
