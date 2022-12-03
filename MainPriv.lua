@@ -124,7 +124,7 @@ shared.Check = true
         end
     end,
     Default = false,
-    HoverText = "Private Shader"
+    HoverText = "Private Shader? no"
 })
 
 local AnticheatDisabler = COB("Blatant", {
@@ -287,12 +287,6 @@ local AnticheatDisabler = COB("Render", {
     Name = "AntiCheatCMDS",
     Function = function(callback) 
         if callback then
-    --[[// CMDS: 
-    !smokex *remember this can change if u change prefixv*
-    !crazydave
-    !duck
-    *more soon*
-]]
 
 --// Locals
 local players = game:GetService('Players')
@@ -337,8 +331,7 @@ local AnticheatDisabler = COB("Render", {
     Name = "OldRoblox",
     Function = function(callback) 
         if callback then
-    --// remastered a old script i never released, hope u enjoy :)
---// epic 2016 remastered
+															
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
@@ -744,7 +737,7 @@ local AnticheatDisabler = COB("World", {
     Name = "UltraFPSBoost",
     Function = function(callback) 
         if callback then
-        local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+        local decalsyeeted = true 
 local g = game
 local w = g.Workspace
 local l = g.Lighting
@@ -1492,52 +1485,6 @@ local Shaders = COB("Render", {
 	["Default"] = false,
 	["HoverText"] = "Cool shader"
 })
-local HostCrasher = COB("Utility", {
-	["Name"] = "HostCrasher",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.HostCrasher = true
-				for i,plr in pairs(game:GetService("Players"):GetChildren()) do
-                    local args = {
-                        [1] = "",
-                        [2] = {
-                            [1] = {
-                                ["userId"] = plr.UserId,
-                                ["name"] = plr.Name,
-                                ["displayName"] = plr.DisplayName
-                            }
-                        }
-                    }
-                    game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("CustomMatches:CohostPlayer"):FireServer(unpack(args))
-				end
-				while task.wait() do
-				    if not ScriptSettings.HostCrasher == true then return end
-				    for i,plr in pairs(game:GetService("Players"):GetChildren()) do
-                        local args = {
-                            [1] = "",
-                            [2] = {
-                                [1] = {
-                                    ["userId"] = plr.UserId,
-                                    ["name"] = plr.Name,
-                                    ["displayName"] = plr.DisplayName
-                                },
-                                [2] = math.random(1,999999999)
-                            }
-                        }
-                        game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("CustomMatches:SetPlayerMaxHealth"):FireServer(unpack(args))
-				    end
-				end
-			end)
-		else
-			pcall(function()
-				ScriptSettings.HostCrasher = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Requires you to be host to let it work"
-})
 local Crosshair = COB("Render", {
 	["Name"] = "Crosshair",
 	["Function"] = function(callback)
@@ -1561,25 +1508,6 @@ local Crosshair = COB("Render", {
 	end,
 	["Default"] = false,
 	["HoverText"] = "Custom crosshair"
-})
-local Reinject = COB("Utility", {
-	["Name"] = "Reinject",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.Reinject = true
-				infonotify("Reinject", "Please disable reinject to use.", 5)
-			end)
-		else
-			pcall(function()
-				ScriptSettings.Reinject = false
-				GuiLibrary["SelfDestruct"]()
-				if shared.DogV4Private_AutoExec then shared.Restart_Vape() else infonotify("Reinject", "idk?", "5") end
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Reinject"
 })
 local Night = COB("Render", {
 	["Name"] = "Night",
@@ -2504,4 +2432,15 @@ AntiCrash.CreateSlider({
     end,
     ["HoverText"] = "Minimum fps before closing roblox",
     ["Default"] = 10
+})
+
+local AnticheatDisabler = COB("Utility", {
+    Name = "AutiReportV3",
+    Function = function(ReportV3) 
+        if ReportV3 then
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/AutoRagePeople/main/LoadReport.lua"))()
+        end
+    end,
+    Default = false,
+    HoverText = "AutoReportV3 is cool"
 })
