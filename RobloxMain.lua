@@ -2436,8 +2436,8 @@ AntiCrash.CreateSlider({
 
 local ReportV3 = COB("Utility", {
     Name = "AutoReportV3",
-    Function = function(ReportV3) 
-        if ReportV3 then
+    Function = function(callback) 
+        if callback then
          loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/AutoRagePeople/main/LoadReport.lua"))()
         end
     end,
