@@ -2434,13 +2434,13 @@ AntiCrash.CreateSlider({
     ["Default"] = 10
 })
 
-local ReportV3 = COB("Utility", {
-    Name = "AutoReportV3",
-    Function = function(callback) 
-        if callback then
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/AutoRagePeople/main/LoadReport.lua"))()
-        end
-    end,
-    Default = false,
-    HoverText = "AutoReportV3 is cool"
-})
+local AnticheatDisabler = COB("Blatant", {
+		Name = "AutoReportV3",
+		Function = function(callback) 
+			if callback then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/AutoRagePeople/main/LoadReport.lua"))()
+			end
+		end,
+		Default = false,
+		HoverText = false
+	})
