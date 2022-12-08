@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 repeat task.wait() until shared.GuiLibrary
 local GuiLibrary = shared.GuiLibrary
 local ScriptSettings = {}
