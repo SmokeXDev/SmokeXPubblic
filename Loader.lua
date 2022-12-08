@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/NewMainForRoblox.lua", true))()
 game.StarterGui:SetCore("SendNotification", {
     Title = "Creator";
     Text = "Made by SmokeXDev#8560"; 
@@ -9,4 +10,3 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Pubblic Version"; 
     Duration = 20;
 })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/NewMainForRoblox.lua", true))()
