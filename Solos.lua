@@ -167,23 +167,6 @@ local AnticheatDisabler = COB("World", {
     HoverText = "Old AntiVoid recreation"
 })
 
-local BoostAirJump = {["Enabled"] = false}
-BoostAirJump = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
-    ["Name"] = "BoostAirJump",
-    ["Function"] = function(callback)
-        if callback then
-            task.spawn(function()
-                repeat
-                    task.wait(0.1)
-                    if BoostAirJump["Enabled"] == false then break end
-                    entity.character.HumanoidRootPart.Velocity = entity.character.HumanoidRootPart.Velocity + Vector3.new(0,40,0)
-                until BoostAirJump["Enabled"] == false
-            end)
-        end
-    end,
-    ["HoverText"] = "SmokeX Client"
-})
-
 local AnticheatDisabler = COB("Render", {
     Name = "Ocean Lighting",
     Function = function(callback) 
@@ -330,7 +313,7 @@ end)
         end
     end,
     Default = false,
-    HoverText = "Credit to smokex.site.xyz for created the script."
+    HoverText = "Funny Commands lmao"
 })
 
 local AnticheatDisabler = COB("Render", {
@@ -509,7 +492,7 @@ end)
         end
     end,
     Default = false,
-    HoverText = "Risky Inf Jump"
+    HoverText = "Anticheat "
 })
 
 
@@ -518,8 +501,8 @@ local AnticheatDisabler = COB("Render", {
     Function = function(callback) 
         if callback then
          while game:IsLoaded() == false do wait() end
-local fakeplr = {["Name"] = "ROBLOX", ["UserId"] = "1"}
-local otherfakeplayers = {["Name"] = "ROBLOX", ["UserId"] = "1"}
+local fakeplr = {["Name"] = "SmokeXClient", ["UserId"] = "1"}
+local otherfakeplayers = {["Name"] = "SmokeXClient", ["UserId"] = "1"}
 local lplr = game:GetService("Players").LocalPlayer
 
 local function plrthing(obj, property)
@@ -560,72 +543,6 @@ game.DescendantAdded:connect(newobj)
     Default = false,
     HoverText = "Old Recreated Feature"
 })
-
-COB("Blatant", {
-    Name = "MoonInfCustomFLY",
-	HoverText = "redid",
-    Function = function(v)
-        longjumpval = v
-        if longjumpval then
-			workspace.Gravity = 55
-            spawn(function()
-                repeat
-                    if (not longjumpval) then return end
-                  game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Freefall")
-					wait(0.000000000000001)
-                   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Running")
-					wait(0.000000000000001)
-                  game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Climbing")
-					wait(0.000000000000001)
-                   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Swimming")
-					wait(0.000000000000001)
-					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-					wait(0.000000000000001)
-                  game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Freefall")
-					wait(0.000000000000001)
-					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Freefall")
-					wait(0.000000000000001)
-                   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Freefall")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Swimming")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Swimming")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Freefall")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Running")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Running")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Swimming")
-					wait(0.000000000000001)
-				 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Swimming")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Running")
-					wait(0.000000000000001)
-					 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-                until (not longjumpval)
-            end)
-        else
-            workspace.Gravity = 196.19999694824
-            return
-        end
-    end
-})
-
 
 COB("Blatant", {
     Name = "AnticheatBFly",
@@ -798,65 +715,6 @@ local AnticheatDisabler = COB("Blatant", {
     HoverText = false
 })
 
-COB("Blatant", {
-    Name = "Flightv2",
-	HoverText = "v2",
-    Function = function(v)
-        longjumpval = v
-        if longjumpval then
-			workspace.Gravity = 10
-            spawn(function()
-                repeat
-                    if (not longjumpval) then return end
-                  game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Freefall")
-					wait(0.000000000000001)
-                   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Running")
-					wait(0.000000000000001)
-                  game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Climbing")
-					wait(0.000000000000001)
-                   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Swimming")
-					wait(0.000000000000001)
-					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Landed")
-					wait(0.000000000000001)
-                until (not longjumpval)
-            end)
-        else
-            workspace.Gravity = 196.19999694824
-            return
-        end
-    end
-})
-
-local AnticheatDisabler = COB("Blatant", {
-    Name = "InfiniteJump",
-    Function = function(callback) 
-        if callback then
-            toggled = true
-				game:GetService("UserInputService").jumpRequest:Connect(function()
-					if toggled == true then
-						wait(jumpdelay)
-						game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass"Humanoid":ChangeState("Jumping")
-						wait(0.0000003)
-						game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass"Humanoid":ChangeState("freefall")						
-					end
-				end)
-			else
-				toggled = false
-        end
-    end,
-    Default = false,
-    HoverText = "jumps inf times"
-})
-
-local AnticheatDisabler = COB("World", {
-    Name = "funny",
-    Function = function(callback) 
-        if callback then
-        if not game:IsLoaded() then
-	game.Loaded:Wait()
-end
-wait()
-
 --// instances
 local cc = Instance.new("ColorCorrectionEffect")
 local lighting = game:GetService("Lighting")
@@ -995,155 +853,7 @@ AnticheatDisabler.CreateSlider({
     ["HoverText"] = "Delay",
     ["Default"] = 0.05
 })
-local KitExploit = COB("Utility", {
-	["Name"] = "KitExploit",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.KitExploit = true
-				local kits = {
-					["Axolotl"] = require(game:GetService("ReplicatedStorage").TS.games.bedwars.kit.kits.axolotl["axolotl-kit"]).AxolotlKit,
-					["Beast"] = require(game:GetService("ReplicatedStorage").TS.games.bedwars.kit.kits["beast"]["beast-util"]).BeastKit,
-					["Dasher"] = require(game:GetService("ReplicatedStorage").TS.games.bedwars.kit.kits.dasher["dasher-kit"]).DasherKit,
-					["Fisherman"] = require(game:GetService("ReplicatedStorage").TS.games.bedwars.kit.kits["fisherman"]["fisherman-util"]).FishermanUtil,
-					["IceQueen"] = require(game:GetService("ReplicatedStorage").TS.games.bedwars.kit.kits["ice-queen"]["ice-queen-kit"]).IceQueenKit,
-					["Santa"] = require(game:GetService("ReplicatedStorage").TS.games.bedwars.kit.kits.santa["santa-util"]).SantaUtil,
-				}
-				kits["Axolotl"]["SWIM_TO_CHARACTER_TIME"] = 0.0000000000001
-				kits["Axolotl"]["ACTIVE_COOLDOWN"] = 0.0000000000001
-				kits["Beast"]["WALK_SPEED_MULTIPLIER"] = 5
-				kits["Beast"]["KNOCKBACK_MULTIPLIER"] = 5
-				kits["Dasher"]["DASH_COOLDOWN"] = 0.0000000000001
-				kits["Dasher"]["CHARGE_TIME"] = 0.0000000000001
-				kits["Dasher"]["CHARGE_TIME_BEFORE_CHARGING_STATE"] = 0.0000000000001
-				kits["Dasher"]["TOTAL_CHARGE_TIME"] = 0.0000000000001
-				kits["Fisherman"]["minigameDuration"] = 60
-				kits["Fisherman"]["markerSize"] = UDim2.fromScale(0.05, 1)
-				kits["Fisherman"]["totalDecaySpeedSec"] = 2
-				kits["Fisherman"]["startingMarkerIncrementSpeed"] = 0.2
-				kits["Fisherman"]["holdMinimumMarkerIncrementSpeed"] = 0.1
-				kits["Fisherman"]["markerIncrementAmount"] = 0.025
-				kits["Fisherman"]["fishZoneSize"] = UDim2.fromScale(0,5, 1)
-				kits["Fisherman"]["fishZoneSpeedMultiplier"] = 5
-				kits["Fisherman"]["fishZoneMoveCooldown"] = 10
-				kits["Fisherman"]["fillAmount"] = 0.1
-				kits["Fisherman"]["drainAmount"] = 0.0001
-				kits["IceQueen"]["DAMAGE_REQUIREMENT"] = 0.0000000000001
-				kits["IceQueen"]["PASSIVE_STACK_COOLDOWN"] = 0.0000000000001
-				kits["IceQueen"]["PROC_COOLDOWN"] = 0.0000000000001
-				kits["IceQueen"]["BAR_COUNT"] = 4
-				kits["IceQueen"]["BASE_PASSIVE_DAMAGE"] = 0.1
-				kits["IceQueen"]["BASE_SPEED_MULTIPLIER"] = 99
-				kits["IceQueen"]["BASE_SLOW_LENGHT"] = 0.0000000000001
-				kits["IceQueen"]["ICE_SWORD_PASSIVE_DAMAGE"] = 0.1
-				kits["IceQueen"]["ICE_SWORD_SLOW_LENGTH"] = 0.0000000000001
-				kits["IceQueen"]["ICE_SWORD_STUN_DURATION"] = 99
-				kits["IceQueen"]["PASSIVE_EXPIRATION_TIME"] = 99
-				kits["Santa"]["BOMB_DROP_DELAY"] = 0.0000000000001
-				kits["Santa"]["TOTAL_BOMBS"] = 99
-				kits["Santa"]["DROP_HEIGHT"] = 150
-				kits["Santa"]["DROP_DELAY"] = 0.0000000000001
-			end)
-		else
-			pcall(function()
-				ScriptSettings.KitExploit = false
-				infonotify("ItemExploit", "Unable to revert changes", "5")
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Exploits Axolotl, Beast, Dasher, Fisherman, IceQueen and Santa kit settings"
-})
-local ItemExploit = COB("Utility", {
-	["Name"] = "ItemExploit",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.ItemExploit = true
-				local SW = require(game:GetService("ReplicatedStorage").TS.games.bedwars.items.stopwatch["stopwatch-constants"]).StopwatchConstants
-				local TB = require(game:GetService("ReplicatedStorage").TS.games.bedwars.items.twirlblade["twirlblade-util"]).TwirlbladeUtil
-				local CS = require(game:GetService("ReplicatedStorage").TS.games.bedwars["charge-shield"]["charge-shield-util"]).ChargeShieldUtil
-				local GH = require(game:GetService("ReplicatedStorage").TS["grappling-hook"]["grappling-hook-util"])
-				local HM = require(game:GetService("ReplicatedStorage").TS.vehicle.helicopter["helicopter-missile"])
-				SW["DURATION"] = 60
-				SW["EFFECT_DURATION"] = 60
-				TB["SPIN_DAMAGE"] = 100
-				CS["CHARGE_SHIELD_COOLDOWN_SEC"] = 0.0000000000001
-				CS["CHARGE_DURATION"] = 10
-				CS["CHARGE_SPEED_MULTIPLIER"] = 5
-				CS["MAX_HIT_DISTANCE"] = 50
-				CS["MAX_HIT_ANGLE"] = 360
-				CS["MAX_HIT_HEIGHT"] = 100
-				CS["HIT_DAMAGE"] = 100
-				CS["VERTICAL_KNOCKBACK"] = 5
-				CS["HORIZONTAL_KNOCKBACK"] = 5
-				GH["SPEED"] = 5000
-				GH["FIRE_COOLDOWN"] = 0.0000000000001
-				GH["HIT_PLAYER_COOLDOWN"] = 0.0000000000001
-				GH["HIT_BLOCK_COOLDOWN"] = 0.0000000000001
-				HM["MISSLE_FIRE_RATE"] = 0.0000000000001
-			end)
-		else
-			pcall(function()
-				ScriptSettings.ItemExploit = false
-				infonotify("ItemExploit", "Unable to revert changes", "5")
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Exploits like 5 item settings settings"
-})
-local InfJump = COB("Utility", {
-	["Name"] = "InfJump",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.InfJump = true
-				game:GetService("UserInputService").JumpRequest:connect(function()
-					if not ScriptSettings.InfJump == true then return end
-					if not ScriptSettings.InfJump_Alr then
-					    game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
-					    ScriptSettings.InfJump_Alr = true
-					    task.wait(0.125)
-					    ScriptSettings.InfJump_Alr = false
-					else
-					    task.wait()
-					end
-				end)
-			end)
-		else
-			pcall(function()
-				ScriptSettings.InfJump = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Makes you can jump infinetly"
-})
-local MageAnimation = COB("Render", {
-	["Name"] = "MageAnimation",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.MageAnimation = true
-				local Animate = game:GetService("Players").LocalPlayer.Character.Animate
-				Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=707742142"
-				Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=707855907"
-				Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=707897309"
-				Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=707861613"
-				Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=707853694"
-				Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=707826056"
-				Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
-			end)
-		else
-			pcall(function()
-				ScriptSettings.MageAnimation = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Makes you get mage animation (FE)"
-})
+
 local SpamSwordSwing = COB("Combat", {
 	["Name"]  = "SpamSwordSwing",
 	["Function"] = function(callback)
@@ -1199,6 +909,7 @@ local NoClickDelay = COB("Combat", {
 	["Default"] = false,
 	["HoverText"] = "Spam swings your sword"
 })
+																	
 local AnimDisabler = COB("Utility", {
 	["Name"]  = "AnimDisabler",
 	["Function"] = function(callback)
@@ -1222,6 +933,7 @@ local AnimDisabler = COB("Utility", {
 	["Default"] = false,
 	["HoverText"] = "Disables your animation"
 })
+																	
 local CollectAllDrops = COB("Utility", {
 	["Name"]  = "CollectAllDrops",
 	["Function"] = function(callback)
@@ -1492,52 +1204,7 @@ local Shaders = COB("Render", {
 	["Default"] = false,
 	["HoverText"] = "Cool shader"
 })
-local HostCrasher = COB("Utility", {
-	["Name"] = "HostCrasher",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.HostCrasher = true
-				for i,plr in pairs(game:GetService("Players"):GetChildren()) do
-                    local args = {
-                        [1] = "",
-                        [2] = {
-                            [1] = {
-                                ["userId"] = plr.UserId,
-                                ["name"] = plr.Name,
-                                ["displayName"] = plr.DisplayName
-                            }
-                        }
-                    }
-                    game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("CustomMatches:CohostPlayer"):FireServer(unpack(args))
-				end
-				while task.wait() do
-				    if not ScriptSettings.HostCrasher == true then return end
-				    for i,plr in pairs(game:GetService("Players"):GetChildren()) do
-                        local args = {
-                            [1] = "",
-                            [2] = {
-                                [1] = {
-                                    ["userId"] = plr.UserId,
-                                    ["name"] = plr.Name,
-                                    ["displayName"] = plr.DisplayName
-                                },
-                                [2] = math.random(1,999999999)
-                            }
-                        }
-                        game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("CustomMatches:SetPlayerMaxHealth"):FireServer(unpack(args))
-				    end
-				end
-			end)
-		else
-			pcall(function()
-				ScriptSettings.HostCrasher = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Requires you to be host to let it work"
-})
+
 local Crosshair = COB("Render", {
 	["Name"] = "Crosshair",
 	["Function"] = function(callback)
@@ -1725,7 +1392,7 @@ local RagdollDisabler = COB("Utility", {
 	["HoverText"] = "Makes you ragdoll to bypass anticheat"
 })
 local LandmindeAura = COB("Blatant", {
-	["Name"]  = "LandmindeAura",
+	["Name"]  = "BetterRange",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
@@ -1759,7 +1426,7 @@ local LandmindeAura = COB("Blatant", {
 })
 local BiMode_Blur 
 local BiMode = COB("Render", {
-	["Name"]  = "BiMode",
+	["Name"]  = "BIMode",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
@@ -1820,31 +1487,6 @@ local SlowAutoWin = COB("Utility", {
 	["Default"] = false,
 	["HoverText"] = "advanced hrp destroyer"
 })
-local InviteCrash = COB("Utility", {
-	["Name"] = "InviteCrash",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.InviteCrash = true
-				while task.wait() do
-					if not ScriptSettings.InviteCrash == true then return end
-					for i,v in pairs(game:GetService("Players"):GetChildren()) do
-						if not v.Name == game:GetService("Players").LocalPlayer.Name then
-							game:GetService("ReplicatedStorage")["events-@easy-games/lobby:shared/event/lobby-events@getEvents.Events"].inviteToParty:FireServer({["player"] = game:GetService("Players")[v.Name],})
-						end
-					end
-				end
-			end)
-		else
-			pcall(function()
-				ScriptSettings.InviteCrash = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Spam invites other players"
-})
-
 
 local lplr = game:GetService("Players").LocalPlayer
 local getasset = getsynasset or getcustomasset or function(location) return "rbxasset://"..location end
@@ -2060,7 +1702,7 @@ end
 		Name = "AutoWin",
 		Function = function(callback) 
 			if callback then
-				infonotify("SmokeX Client", "its private users only", 5)	
+				infonotify("SmokeX Client", "Its private users only lmao", 5)	
 			end
 		end,
 		Default = false,
@@ -2289,22 +1931,6 @@ runcode(function()
 	})
 end)
 
-BoostAirJump = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
-    ["Name"] = "BoostAirJump",
-    ["Function"] = function(callback)
-        if callback then
-            task.spawn(function()
-                repeat
-                    task.wait(0.1)
-                    if BoostAirJump["Enabled"] == false then break end
-                    entity.character.HumanoidRootPart.Velocity = entity.character.HumanoidRootPart.Velocity + Vector3.new(0,40,0)
-                until BoostAirJump["Enabled"] == false
-            end)
-        end
-    end,
-    ["HoverText"] = "Smoke X Client"
-})
-
 local AnticheatDisabler = COB("Render", {
     Name = "BigHead (requires rthro head)",
     Function = function(callback) 
@@ -2387,7 +2013,7 @@ AnticheatDisabler.CreateSlider({
 	})
 	
 	local RbHotbar = COB("Render", {
-    Name = "Rainbow HOTBAR",
+    Name = "RGB HotBar",
     Function = function(callback) 
         if callback then
 		function SmokeRB(X) return math.acos(math.cos(X*math.pi))/math.pi end
@@ -2447,19 +2073,6 @@ game.ReplicatedStorage.Items.emerald_chestplate:Clone().Parent = game.Replicated
     end,
     Default = false,
     HoverText = "Gives you emerald stuff lel."
-})
-
-local RageBladeTool = COB("Utility", {
-    Name = "RageBlade?",
-    Function = function(callback) 
-        if callback then
-		local lplr = game.Players.LocalPlayer
-
-game.ReplicatedStorage.Items.rageblade:Clone().Parent = game.ReplicatedStorage.Inventories[lplr.Name]
-        end
-    end,
-    Default = false,
-    HoverText = "free rageblade?!"
 })
 
 local AntiCrash = COB("World", {
