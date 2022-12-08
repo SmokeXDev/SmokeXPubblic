@@ -1,1 +1,3 @@
-pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/CustomModules/"..tostring(game.PlaceId)..".lua"))()end);local a=syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport or function()end;game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(b)if b==Enum.TeleportState.Started then a("loadstring(game:HttpGet('https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/NewMainForRoblox.lua'))()")end end)
+if game.PlaceId == 6872274481 then
+ loadstring(game:HttpGet(('https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/CustomModules/6872274481.lua'),true))()   
+end
