@@ -39,11 +39,11 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "SmokeX Client V1"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "SmokeX Client V1"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "SmokeX Client V1"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "SmokeX Client V1.0"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "SmokeX Client V1.0"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "SmokeX Client V1.0"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Position = UDim2.new(1, -175 - 20, 1, -25)
-infonotify("SmokeX", "Loaded successfully!", 5)
+infonotify("SmokeX", "Loaded Successfully!", 5)
 
 local CustomFly = COB("Blatant", {
 	["Name"] = "CustomFly",
