@@ -1,3 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/Solos.lua", true))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/3827956608.lua", true))()
+pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/Loaders/"..tostring(game.PlaceId)..".lua"))()end);local a=syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport or function()end;game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(b)if b==Enum.TeleportState.Started then a("loadstring(game:HttpGet('https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/NewMainForRoblox.lua'))()")end end)
