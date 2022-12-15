@@ -677,3 +677,12 @@ local AFKFarm = COB("Utility", {
 	["Default"] = false,
 	["HoverText"] = "Be afk and wait for win lmao"
 })
+
+local AutoToxicV2 = COB("Utility", {
+	["Name"]  = "AutoToxicV2",
+	["Function"] = function(callback)
+		if callback then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/SmokeXDev/SmokeXPubblic/main/Resources/AutoToxicV2.lua", true))()
+	["Default"] = false,
+	["HoverText"] = "Cool AutoToxicV2 By SmokeX Client"
+})
