@@ -3,7 +3,7 @@ local chosenPlayer = ""
 
 
 
-local Taunts = { --add as many as you wish
+local Taunts = {
   "You're bad at the game bro.",
    "Imagine Not Being Able To Exploit",
   "I'm your dad so if you try to talk to me you're stupid.",
