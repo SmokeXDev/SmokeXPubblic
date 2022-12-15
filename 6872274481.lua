@@ -188,7 +188,7 @@ local AnimDisabler = COB("Utility", {
 	["HoverText"] = "Disables your animation"
 })
 local CollectAllDrops = COB("Utility", {
-	["Name"]  = "CollectAllDrops",
+	["Name"]  = "CollectDrops",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
@@ -208,7 +208,7 @@ local CollectAllDrops = COB("Utility", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "Collect drops"
+	["HoverText"] = "Collect map drops"
 })
 local Shaders = COB("Render", {
 	["Name"] = "Shaders",
@@ -455,7 +455,7 @@ local Shaders = COB("Render", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "Cool shader"
+	["HoverText"] = "Cool shader, not by SmokeX"
 })
 local Crosshair = COB("Render", {
 	["Name"] = "Crosshair",
@@ -541,7 +541,7 @@ local ChatCrasher = COB("Utility", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "cool"
+	["HoverText"] = "bye chat ;("
 })
 
 local CustomAntivoid = COB("Utility", {
@@ -550,7 +550,6 @@ local CustomAntivoid = COB("Utility", {
 		if callback then
 			pcall(function()
 				ScriptSettings.CustomAntivoid = true
-				--repeat task.wait(0.3) until getstate() == 1
 				local part = Instance.new("Part")
 				part.Name = "AVOID_PART"
 				part.Anchored = true
@@ -568,14 +567,6 @@ local CustomAntivoid = COB("Utility", {
 						game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
 						task.wait(0.12)
 						game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-						--[[
-							local tptimes = 0
-							repeat
-								task.wait()
-								tptimes = tptimes + 1
-								game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame / 2
-							until tptimes = 10
-						]]--
 					end
 				end)
 			end)
@@ -589,30 +580,9 @@ local CustomAntivoid = COB("Utility", {
 	["Default"] = false,
 	["HoverText"] = "AntiVoid Is Cool"
 })
-local RagdollDisabler = COB("Utility", {
-	["Name"]  = "RagdollDisabler",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.RagdollDisabler = true
-				while task.wait(0.1) do
-					if not ScriptSettings.RagdollDisabler == true then return end
-					game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Ragdoll)
-					task.wait(0.085)
-					game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
-				end
-			end)
-		else
-			pcall(function()
-				ScriptSettings.RagdollDisabler = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "Makes you ragdoll to bypass anticheat"
-})
+
 local LandmindeAura = COB("Blatant", {
-	["Name"]  = "BetterRange",
+	["Name"]  = "LandmindeAura",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
@@ -642,7 +612,7 @@ local LandmindeAura = COB("Blatant", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "BetterRange Lmao"
+	["HoverText"] = "Lmao"
 })
 local BiMode_Blur 
 local BiMode = COB("Render", {
@@ -684,12 +654,12 @@ local BiMode = COB("Render", {
 	["Default"] = false,
 	["HoverText"] = "ok"
 })
-local SlowAutoWin = COB("Utility", {
-	["Name"]  = "SlowAutoWin",
+local AFKFarm = COB("Utility", {
+	["Name"]  = "AFKFarm",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
-				ScriptSettings.SlowAutoWin = true
+				ScriptSettings.AFKFarm = true
 				local char = game:GetService("Players").LocalPlayer.Character
 				char:FindFirstChild("HumanoidRootPart").CFrame = char:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0,99,0)
 				char:FindFirstChild("Head").Anchored = true
@@ -700,10 +670,10 @@ local SlowAutoWin = COB("Utility", {
 		else
 			pcall(function()
 				ScriptSettings.SlowAutoWin = false
-				infonotify("SlowAutoWin", "Unable to revert changes", "5")
+				infonotify("AFkFarm", "Unable to revert changes", "5")
 			end)
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "advanced hrp destroyer"
+	["HoverText"] = "Be afk and wait for win lmao"
 })
