@@ -71,44 +71,7 @@ local CustomFly = COB("Blatant", {
 	["Default"] = false,
 	["HoverText"] = "Uses bypasses to fly"
 })
-local AnticheatDisabler = COB("Utility", {
-	["Name"] = "AnticheatDisabler",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.AnticheatDisabler = true
-                                        local function disablerFunction()
-	     local lplr = game.Players.LocalPlayer
-        lplr.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
-        lplr.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Dead)
-        repeat task.wait() until lplr.Character.Humanoid.MoveDirection ~= Vector3.zero
-        task.wait(0.2)
-        lplr.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
-        lplr.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
-        workspace.Gravity = 192.6    
-    end
-             disablerFunction()
-			end)
-		else
-			pcall(function()
-				ScriptSettings.AnticheatDisabler = false
-			end)
-		end
-	end,
-	["Default"] = false,
-	["HoverText"] = "yes its real stfu"
-})
-AnticheatDisabler.CreateSlider({
-    ["Name"] = "Delay",
-	["Double"] = 100,
-    ["Min"] = 0,
-    ["Max"] = 100,
-    ["Function"] = function(val)
-        ScriptSettings.AnticheatDisabler_Delay = val
-    end,
-    ["HoverText"] = "Delay",
-    ["Default"] = 0.05
-})
+
 local SpamSwordSwing = COB("Combat", {
 	["Name"]  = "SpamSwordSwing",
 	["Function"] = function(callback)
@@ -130,6 +93,7 @@ local SpamSwordSwing = COB("Combat", {
 	["Default"] = false,
 	["HoverText"] = "Spam swings your sword"
 })
+
 local NoClickDelay = COB("Combat", {
 	["Name"]  = "NoClickDelay",
 	["Function"] = function(callback)
@@ -165,7 +129,7 @@ local NoClickDelay = COB("Combat", {
 	["HoverText"] = "Spam swings your sword"
 })
 local AnimDisabler = COB("Utility", {
-	["Name"]  = "AnimDisabler",
+	["Name"]  = "NoAnim",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
@@ -455,7 +419,7 @@ local Shaders = COB("Render", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "Cool shader, not by SmokeX"
+	["HoverText"] = "Cool shaders, not by SmokeX"
 })
 local Crosshair = COB("Render", {
 	["Name"] = "Crosshair",
@@ -500,6 +464,7 @@ local Reinject = COB("Utility", {
 	["Default"] = false,
 	["HoverText"] = "Reinjects Vape"
 })
+
 local Night = COB("Render", {
 	["Name"] = "Night",
 	["Function"] = function(callback)
@@ -544,12 +509,12 @@ local ChatCrasher = COB("Utility", {
 	["HoverText"] = "bye chat ;("
 })
 
-local CustomAntivoid = COB("Utility", {
-	["Name"] = "CustomAntivoid",
+local BetterAntivoid = COB("Utility", {
+	["Name"] = "BetterAntivoid",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
-				ScriptSettings.CustomAntivoid = true
+				ScriptSettings.BetterAntivoid = true
 				local part = Instance.new("Part")
 				part.Name = "AVOID_PART"
 				part.Anchored = true
@@ -578,7 +543,7 @@ local CustomAntivoid = COB("Utility", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "AntiVoid Is Cool"
+	["HoverText"] = "Good AntiVoid"
 })
 
 local LandmindeAura = COB("Blatant", {
@@ -614,6 +579,7 @@ local LandmindeAura = COB("Blatant", {
 	["Default"] = false,
 	["HoverText"] = "Lmao"
 })
+
 local BiMode_Blur 
 local BiMode = COB("Render", {
 	["Name"]  = "BIMode",
@@ -654,6 +620,7 @@ local BiMode = COB("Render", {
 	["Default"] = false,
 	["HoverText"] = "ok"
 })
+
 local AFKFarm = COB("Utility", {
 	["Name"]  = "AFKFarm",
 	["Function"] = function(callback)
