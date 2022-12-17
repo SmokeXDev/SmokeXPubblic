@@ -13,23 +13,19 @@ local Taunts = {
   "L Bozo.",
   "Reported.",
   "SmokeX Client on Top!",
-  "smokex.site.xyz",
   "Bozo Crying?",
   "why are you so bad?",
-  "...................you bad ..................",
   "I think you're stupid dude it's obvious.",
   "Lol, do you think I answer you in chat?",
   "Your Mom Under My Bed Sheet.",
   "I aim to be the most highly targeted person in this server.",
   "Dude you are so bad...",
   "Stop playing ROBLOX Because you are bad",
-  "I programmed a chat bot to start arguments with people and its totally working.",
   "Turn off your computer",
   "I am smart",
   "Skills dont matter",
   "IM REPORTING.",
   "SmokeX Client on Top!",
-  "smokex.site.xyz",
 }
 
 local Remote = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
