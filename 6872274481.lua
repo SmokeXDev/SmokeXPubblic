@@ -39,9 +39,11 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "SmokeX Client V1.0"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "SmokeX Client V1.0"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "SmokeX Client V1.0"
+game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "SmokeX Client Loaded!", Color = Color3.fromRGB(255, 255, 255), Font = Enum.Font.Merriweather, FontSize = Enum.FontSize.Size24 } )
+
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "SmokeX Client"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "SmokeX Client"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "SmokeX Client"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Position = UDim2.new(1, -175 - 20, 1, -25)
 infonotify("SmokeX", "Loaded Successfully!", 5)
 
