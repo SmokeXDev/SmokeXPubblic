@@ -39,8 +39,6 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "SmokeX Client Loaded!", Color = Color3.fromRGB(255, 255, 255), Font = Enum.Font.Merriweather, FontSize = Enum.FontSize.Size24 } )
-
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "SmokeX Client"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "SmokeX Client"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "SmokeX Client"
