@@ -9,3 +9,5 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Pubblic Edition"; 
     Duration = 20;
 })
+
+game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "SmokeX Client Loaded!", Color = Color3.fromRGB(255, 255, 255), Font = Enum.Font.Merriweather, FontSize = Enum.FontSize.Size24 } )
