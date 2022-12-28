@@ -4,7 +4,7 @@ local uis = game:GetService("UserInputService")
 local GuiLibrary = shared.GuiLibrary
 local ScriptSettings = {}
 local UIS = game:GetService("UserInputService")
-local COB = function(tab, argstable) 
+local SMX = function(tab, argstable) 
 	return GuiLibrary["ObjectsThatCanBeSaved"][tab.."Window"]["Api"].CreateOptionsButton(argstable)
 end
 function securefunc(func)
@@ -45,7 +45,7 @@ GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "SmokeX Client"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Position = UDim2.new(1, -175 - 20, 1, -25)
 infonotify("SmokeX", "Loaded Successfully!", 5)
 
-local CustomFly = COB("Blatant", {
+local CustomFly = SMX("Blatant", {
 	["Name"] = "CustomFly",
 	["Function"] = function(callback)
 		if callback then
@@ -72,7 +72,7 @@ local CustomFly = COB("Blatant", {
 	["HoverText"] = "Uses bypasses to fly"
 })
 
-local SpamSwordSwing = COB("Combat", {
+local SpamSwordSwing = SMX("Combat", {
 	["Name"]  = "SpamSwordSwing",
 	["Function"] = function(callback)
 		if callback then
@@ -94,7 +94,7 @@ local SpamSwordSwing = COB("Combat", {
 	["HoverText"] = "Spam swings your sword"
 })
 
-local NoClickDelay = COB("Combat", {
+local NoClickDelay = SMX("Combat", {
 	["Name"]  = "NoClickDelay",
 	["Function"] = function(callback)
 		if callback then
@@ -128,7 +128,8 @@ local NoClickDelay = COB("Combat", {
 	["Default"] = false,
 	["HoverText"] = "Spam swings your sword"
 })
-local AnimDisabler = COB("Utility", {
+
+local AnimDisabler = SMX("Utility", {
 	["Name"]  = "NoAnim",
 	["Function"] = function(callback)
 		if callback then
@@ -151,7 +152,8 @@ local AnimDisabler = COB("Utility", {
 	["Default"] = false,
 	["HoverText"] = "Disables your animation"
 })
-local CollectAllDrops = COB("Utility", {
+
+local CollectAllDrops = SMX("Utility", {
 	["Name"]  = "CollectDrops",
 	["Function"] = function(callback)
 		if callback then
@@ -172,9 +174,10 @@ local CollectAllDrops = COB("Utility", {
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "Collect map drops"
+	["HoverText"] = "Collect map drops, no working really good but i don't care"
 })
-local Shaders = COB("Render", {
+
+local Shaders = SMX("Render", {
 	["Name"] = "Shaders",
 	["Function"] = function(callback)
 		if callback then
@@ -421,7 +424,8 @@ local Shaders = COB("Render", {
 	["Default"] = false,
 	["HoverText"] = "Cool shaders, not by SmokeX"
 })
-local Crosshair = COB("Render", {
+
+local Crosshair = SMX("Render", {
 	["Name"] = "Crosshair",
 	["Function"] = function(callback)
 		if callback then
@@ -445,7 +449,8 @@ local Crosshair = COB("Render", {
 	["Default"] = false,
 	["HoverText"] = "Custom crosshair"
 })
-local Reinject = COB("Utility", {
+
+local Reinject = SMX("Utility", {
 	["Name"] = "Reinject",
 	["Function"] = function(callback)
 		if callback then
@@ -465,7 +470,7 @@ local Reinject = COB("Utility", {
 	["HoverText"] = "Reinjects Vape"
 })
 
-local Night = COB("Render", {
+local Night = SMX("Render", {
 	["Name"] = "Night",
 	["Function"] = function(callback)
 		if callback then
@@ -488,7 +493,7 @@ local Night = COB("Render", {
 	["HoverText"] = "Cool night render"
 })
 
-local ChatCrasher = COB("Utility", {
+local ChatCrasher = SMX("Utility", {
 	["Name"] = "ChatCrasher",
 	["Function"] = function(callback)
 		if callback then
@@ -509,16 +514,17 @@ local ChatCrasher = COB("Utility", {
 	["HoverText"] = "bye chat ;("
 })
 
-local BetterAntivoid = COB("Utility", {
-	["Name"] = "BetterAntivoid",
+local OPAntiVoid = SMX("Utility", {
+	["Name"] = "OPAntiVoid",
 	["Function"] = function(callback)
 		if callback then
 			pcall(function()
-				ScriptSettings.BetterAntivoid = true
+				ScriptSettings.OPAntiVoid = true
 				local part = Instance.new("Part")
-				part.Name = "AVOID_PART"
+				part.Name = "NewVoid"
 				part.Anchored = true
-				part.Color = Color3.fromRGB(255,65,65)
+				part.Transparency = 1
+				part.Color = Color3.fromRGB(0, 46, 255)
 				part.Size = Vector3.new(5000,3,5000)
 				part.Parent = game:GetService("Workspace")
 				part.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,20,0)
@@ -537,16 +543,16 @@ local BetterAntivoid = COB("Utility", {
 			end)
 		else
 			pcall(function()
-				ScriptSettings.CustomAntivoid = false
-				ScriptSettings.CustomAntivoid_Part:Destroy()
+				ScriptSettings.OPAntiVoid = false
+				ScriptSettings.NewVoid:Destroy()
 			end)
 		end
 	end,
 	["Default"] = false,
-	["HoverText"] = "Good AntiVoid"
+	["HoverText"] = "Good AntiVoid Again lmao"
 })
 
-local LandmindeAura = COB("Blatant", {
+local LandmindeAura = SMX("Blatant", {
 	["Name"]  = "LandmindeAura",
 	["Function"] = function(callback)
 		if callback then
@@ -581,7 +587,7 @@ local LandmindeAura = COB("Blatant", {
 })
 
 local BiMode_Blur 
-local BiMode = COB("Render", {
+local BiMode = SMX("Render", {
 	["Name"]  = "BIMode",
 	["Function"] = function(callback)
 		if callback then
@@ -621,7 +627,7 @@ local BiMode = COB("Render", {
 	["HoverText"] = "ok"
 })
 
-local AFKFarm = COB("Utility", {
+local AFKFarm = SMX("Utility", {
 	["Name"]  = "AFKFarm",
 	["Function"] = function(callback)
 		if callback then
@@ -645,7 +651,7 @@ local AFKFarm = COB("Utility", {
 	["HoverText"] = "Be afk and wait for win lmao"
 })
 
-local AutoToxicV2 = COB("Utility", {
+local AutoToxicV2 = SMX("Utility", {
 	["Name"]  = "AutoToxicV2",
 	["Function"] = function(callback)
 		if callback then
@@ -656,4 +662,75 @@ local AutoToxicV2 = COB("Utility", {
 	end,
 	["Default"] = false,
 	["HoverText"] = "Cool AutoToxicV2 By SmokeX Client"
+})
+
+local VClip = SMX("Utility", {
+	["Name"]  = "VClip",
+	["Function"] = function(callback)
+		if callback then
+			local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+			local y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y 
+			local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x,y-10,z)
+			createwarning("VClip", "Success!", 1)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "Why not"
+})
+
+local DisableChat = SMX("Utility", {
+	["Name"]  = "ChatRemover",
+	["Function"] = function(callback)
+		if callback then
+			if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+				game:GetService("StarterGui"):SetCoreGuiEnabled("Chat", false)
+				createwarning("ChatDisabler", "Disabled Chat!", 1)
+			end
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "ByeBye Chat"
+})
+
+local ChatRestore = SMX("Render", {
+	["Name"]  = "ChatRestore",
+	["Function"] = function(callback)
+		if callback then
+			if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+				game:GetService("StarterGui"):SetCoreGuiEnabled("Chat", true)
+				createwarning("Chat Restore", "Chat Restored!", 1)
+			end
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "Restore Chat"
+})
+
+local BedTP = SMX("World", {
+	["Name"]  = "BedTP",
+	["Function"] = function(callback)
+		if callback then
+			if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+				local ClosestBedMag = math.huge
+				local ClosestBed = false
+				local lplr = game.Players.LocalPlayer
+				function GetNearestBedToPosition()
+					for i,v in pairs(game.Workspace:GetChildren()) do
+						if v.Name == "bed" and v:FindFirstChild("Covers") and v.Covers.BrickColor ~= game.Players.LocalPlayer.Team.TeamColor then
+							if (lplr.Character.HumanoidRootPart.Position - v.Position).Magnitude < ClosestBedMag then
+								ClosestBedMag = (lplr.Character.HumanoidRootPart.Position - v.Position).Magnitude
+								ClosestBed = v
+							end
+						end
+					end
+					return ClosestBed
+				end
+				local real = GetNearestBedToPosition().Position
+				game.Players.LocalPlayer.Character.PrimaryPart.CFrame = CFrame.new(real) + Vector3.new(0,5,0)
+			end
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "TP to a random bed"
 })
